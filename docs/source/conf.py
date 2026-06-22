@@ -30,7 +30,7 @@ source_suffix = {
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'furo' # deciding between 'sphinx_rtd_theme' and 'furo'
+html_theme = 'sphinx_rtd_theme' # deciding between 'sphinx_rtd_theme' and 'furo'
 html_static_path = ['_static']
 
 html_logo = '_static/CCI_logo.avif' # path to logo from config dir. (if furo, will show this and light/dark)
