@@ -114,7 +114,7 @@
     ```
     ros2 topic list
     ```
-    - This command should return an empty list of topics, indicating that ROS 2 is installed and running correctly on the Raspberry Pi.
+    - If you see a list of ROS 2 topics (which may be empty if there are no nodes running on the network), then ROS 2 is installed and working correctly on your Raspberry Pi.
 
 8. **Make your life easier by adding some shortcuts.**
     - In your home directory lives a hidden file called `.bashrc`. This file is executed every time you open a new terminal session. You can add some shortcuts to this file to make your life easier when working with ROS 2 on the Raspberry Pi.

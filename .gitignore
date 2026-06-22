@@ -1,0 +1,6 @@
+.vscode
+design/
+.venv/
+
+docs/build/html/*
+docs/build/doctrees/*
