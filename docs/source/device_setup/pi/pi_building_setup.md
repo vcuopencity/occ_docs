@@ -140,7 +140,7 @@
     ```
     - Save and exit the file (Ctrl+X, then Y, then Enter).
     - Now, every time you open a new terminal session, ROS 2 will be sourced automatically, and you can use the `build` alias to build your ROS 2 workspace and source the setup script in one command. 
-    - You can also use the `tl` and `el` aliases to list ROS 2 topics and echo topic messages more easily. Feel free to add any other shortcuts or aliases that you find useful for your development workflow.
+    - You can also use the `tl` and `te` aliases to list ROS 2 topics and echo topic messages more easily. Feel free to add any other shortcuts or aliases that you find useful for your development workflow.
 
 **Continue to the building specific setup guides for the hospital, office, and residential buildings to learn how to set up the specific devices and systems in each building.**
 
