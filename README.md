@@ -30,8 +30,8 @@ Here is what the documentation looks like when built and served locally with dif
 ### Furo (Light)
 <img src="images/furo_theme_light.png" alt="Furo Theme" width="100%" />
 
-## How to Preview the Documentation
-The documentation is still in developement and is not yet deployed.
+## Building Documentation
+The documentation is still in development and is not yet deployed.
 
 If you wish to preview the documentation, you can do so by following these steps:
 
