@@ -7,5 +7,7 @@ If you are new to the OpenCyberCity Testbed project, we recommend starting with 
 ```{toctree}
 :maxdepth: 2
 :caption: Contents:
-:glob:
-*
+get_started
+device_setup
+architecture
+usage

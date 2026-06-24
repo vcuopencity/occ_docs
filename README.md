@@ -8,10 +8,12 @@ This repository contains the documentation for the OpenCyberCity Testbed project
 - **Markdown Support**: The documentation is written in Markdown, making it easy to read and write. No need to learn reStructuredText (reST), or write HTML. Any exisiting documentation can be easily ported to this repository.
 - **Automatic Table of Contents**: The documentation includes an automatically generated table of contents, making it easy to navigate through the different sections.
 
+- **Search Functionality**: The documentation will include a search feature, allowing users to quickly find the information they need. (This feature is only available when the documentation is served through a [web server](#web-server))
+
 ## Planned Features
 
-- **Search Functionality**: The documentation will include a search feature, allowing users to quickly find the information they need.
 - **Build Automation**: The documentation will be automatically built upon changes and deployed to a web server, ensuring that the latest version is always available to users.
+
 - **No-cost Hosting**: The documentation will be hosted using GitHub Pages, making it accessible to all users without any cost.
 
 ## Preview
@@ -60,7 +62,17 @@ If you wish to preview the documentation, you can do so by following these steps
     make html
     ```
 
-6. Open the generated HTML files in your web browser. You can find the main page at `docs/build/html/index.html`.
+6. Open the webpage!
+    > **Note:** Some features, such as the search functionality, may not work properly when opening the HTML files directly in a web browser without a web server. Therefore, it is recommended to use a local web server to view the documentation.
+- <a id="web-server"></a>
+  **Option 1 (Recommended):** Launch an HTTP server to serve the documentation locally. You can use Python's built-in HTTP server for this purpose:
+    ```bash
+    cd docs/
+    python -m http.server 6767 --directory build/html
+    ```
+    - This will start a local web server at `http://localhost:6767`. You can open this URL in your web browser to view the documentation.
+
+- **Option 2:** Open the generated HTML files in your web browser. You can find the main page at `docs/build/html/index.html`.
     - If you are on native Ubuntu, you can use the following command to open the main page in your default web browser:
     ```bash
     xdg-open build/html/index.html
@@ -70,7 +82,6 @@ If you wish to preview the documentation, you can do so by following these steps
     ```bash
     wslview build/html/index.html
     ```
-
 ## Contributing to the Documentation
 
 Check out the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to contribute to the documentation.
