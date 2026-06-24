@@ -9,7 +9,7 @@
 
 Unlinke a normal website, Sphinx does not automatically figure out the navigation tree from the folder structure. Instead, it uses explicit `toctree` structures to declare the hierarchy of pages. The navigation tree is built from two things:
 
-**Landing pages** — a `.md` file that sits *beside* a folder of the same name. The landing page is the parent of all the pages in that folder, and its toctree declares them as children.
+**Landing pages** — a `.md` file that sits beside a folder of the same name. The landing page is the parent of all the pages in that folder, and its toctree declares them as children.
 
 ```
 docs/source/
@@ -47,7 +47,7 @@ usage/traffic_lights
 
 ## Adding a section
 
-Look at the `usage` section.
+Every directory has a landing page.
 
 This pairing is the core convention to remember. Every section that has children is **a `.md` landing page next to a folder of the same name**:
 
@@ -186,7 +186,7 @@ make rebuild   # clean + full HTML build
 make serve     # clean + build, then serve at http://localhost:6767
 ```
 
-**Use `make rebuild` (not a plain `make html`) after changing any toctree or moving files.** Sphinx leaves weird build artifacts sometimes (dw i put in an issue)
+**Use `make rebuild` (instead of `make html`) after changing any toctree or moving files.** Sphinx leaves weird build artifacts sometimes (dw i put in an issue)
 
 `make serve` rebuilds and then launches a local webserver to host the site, use it instead of double-clicking the HTML file. Opening pages directly via `file://` causes some issues. You can pass a different port with `make serve PORT=9000`. (i still think port 6767 is the best)
 
