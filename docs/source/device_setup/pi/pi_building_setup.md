@@ -3,7 +3,7 @@
 1. **Setup the Raspberry Pi with the following steps:**
   - Download Raspberry Pi Imager <a href="https://www.raspberrypi.com/software/">here</a>
   - Select your Raspberry Pi device
-  - Under "Other general-purpose OS" select the OS: `UBUNTU SERVER 24.04.2 LTS (64-BIT)`
+  - Under "Other general-purpose OS" select the OS: **`UBUNTU SERVER 24.04 LTS (64-BIT)`**
   - Select your micro-SD card storage
   - Enter appropriate hostname (use `<building-name>-floor<floor-id>` for floor-level pis; use `<building-name>-master` for building-level pis)
       - E.g. `hospital-floor1` for a Pi on floor 1 of the hospital building
@@ -21,16 +21,21 @@
   ```
   ssh pi@<hostname>.local
   ```
-  - Make sure you are on the same network as the Raspberry Pi. If you are unable to connect using the hostname, you can also try connecting using the IP address of the Raspberry Pi. You can find the IP address by checking your router's connected devices list or by using a network scanning tool like `nmap` or `arp-scan`.
+  - Make sure you are on the same network as the Raspberry Pi. If you are unable to connect using the hostname, you can also try connecting using the IP address of the Raspberry Pi. You can find the IP address by checking your router's connected devices list or by using a network scanning tool like `nmap`. If you are not familiar with `nmap`, follow the guide [here](nmap-instructions).
 ---
 4. **Login with the username `pi` and the password `raspberry`.**
 ---
+(static-ip-setup)=
 5. **Set a static IP address for the Raspberry Pi.**
   > **Note:** Almost all devices in the OpenCyberCity Testbed project are configured to use static IP addresses. Some address ranges are reserved for specific types of devices, or devices within specific systems. <br> All this information is documented in the IP Address Registry spreadsheet in the Google Drive. Make sure to refer to this document to find the appropriate static IP address for the Raspberry Pi you are setting up.<br> For example, all floor-level Raspberry Pis in the hospital building are assigned static IP addresses in the range `10.213.1.91 -> 10.213.1.94` (90 is the master, and 91-94 are the floor-level Pis for floors 1-4, respectively).
   - Run `ip route` to check the current IP address of the gateway and the network interface name (e.g. `eth0` or `wlan0`).
-      - Look for the line that starts with `default via` to find the gateway IP address and the network interface name. Take note of these values as you will need them later.
+      - Look for the line that starts with `default via` to find the gateway IP address and the network interface name. Take note of these values as you will need them later.   
+        - For example: 
+      `default via`**`10.213.1.12`**`dev`**`wlan0`**`proto kernel metric 55`
+          - `10.213.1.12` is the gateway IP
+          - `wlan0` is the network interface name
   - Run `resolvectl status` to check the current DNS server IP address.
-      - Look for the line that starts with `DNS Servers` to find the DNS server IP address. Take note of this value as you will need it later. If they are identical to the gateway IP address, you can use the gateway IP address as the DNS server IP address in the next step.
+      - Look for the line that starts with `DNS Servers` to find the DNS server IP address. Take note of this value as you will need it later. If it is identical to the gateway IP address, you can use the gateway IP address as the DNS server IP address in the next step.
   - Edit the netplan configuration file to set a static IP address for the Raspberry Pi. You can use the following command to open the file in a text editor:
   ```
   cd /etc/netplan

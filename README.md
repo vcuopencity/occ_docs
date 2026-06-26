@@ -1,4 +1,5 @@
 # OpenCyberCity Testbed Documentation
+# Access the website [here](www.vcuopencity.github.io/occ_docs)
 
 This repository contains the documentation for the OpenCyberCity Testbed project, including system architecture, design specifications, and user guides.
 
