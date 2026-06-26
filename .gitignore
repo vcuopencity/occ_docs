@@ -1,4 +1,4 @@
 .vscode
 design/
 .venv/
-docs/build/*
+docs/build

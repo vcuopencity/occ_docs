@@ -56,31 +56,14 @@ If you wish to preview the documentation, you can do so by following these steps
     pip install -r requirements.txt
     ```
 
-5. Navigate to the `docs` directory and build the documentation.
-    ```bash
-    cd docs
-    make html
-    ```
-
-6. Open the webpage!
-    > **Note:** Some features, such as the search functionality, may not work properly when opening the HTML files directly in a web browser without a web server. Therefore, it is recommended to use a local web server to view the documentation.
+5. Build and launch the website!
 - <a id="web-server"></a>
-  **Option 1 (Recommended):** Launch an HTTP server to serve the documentation locally. You can use Python's built-in HTTP server for this purpose:
+    - Launch an HTTP server to serve the documentation locally. You can use Python's built-in HTTP server for this purpose:
     ```bash
     cd docs/
-    python -m http.server 6767 --directory build/html
+    make serve
     ```
-    - This will start a local web server at `http://localhost:6767`. You can open this URL in your web browser to view the documentation.
-
-- **Option 2:** Open the generated HTML files in your web browser. You can find the main page at `docs/build/html/index.html`.
-    - If you are on native Ubuntu, you can use the following command to open the main page in your default web browser:
-    ```bash
-    xdg-open build/html/index.html
-    ```
-
-    - If you are on WSL, you can use the following command to open the main page in your default web browser:
-    ```bash
-    wslview build/html/index.html
+    - This will start a local web server at `http://localhost:8000`. You can open this URL in your web browser to view the documentation.
     ```
 ## Contributing to the Documentation
 
