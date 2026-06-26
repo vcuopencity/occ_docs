@@ -9,7 +9,7 @@
 project = 'OpenCyberCity Testbed'
 copyright = '2026-%Y, OCC Team' # %Y is a placeholder that returns the current year
 author = 'OCC Team'
-release = '0.5.1' # Unlke with our ROS packages, please keep this somewhat updated
+release = '1.0' # Unlke with our ROS packages, please keep this somewhat updated
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
