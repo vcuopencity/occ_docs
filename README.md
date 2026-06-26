@@ -2,7 +2,7 @@
 
 [![Build and deploy docs](https://github.com/vcuopencity/occ_docs/actions/workflows/docs.yml/badge.svg)](https://github.com/vcuopencity/occ_docs/actions/workflows/docs.yml)
 
-This repository contains the documentation source for the OpenCyberCity Testbed project, including system architecture, design specifications, and user guides. You can access the documentation by going to: [www.vcuopencity.github.io/occ_docs](www.vcuopencity.github.io/occ_docs)
+This repository contains the documentation source for the OpenCyberCity Testbed project, including system architecture, design specifications, and user guides. You can access the documentation by going to: [www.vcuopencity.github.io/occ_docs](https://vcuopencity.github.io/occ_docs)
 
 ## Features
 
