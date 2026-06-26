@@ -3,11 +3,11 @@
 
 # You can set these variables from the command line, and also
 # from the environment for the first two.
-SPHINXOPTS    ?=
+SPHINXOPTS    ?= -W --keep-going -n
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
-PORT          ?= 6767
+PORT          ?= 8000
 
 # Put it first so that "make" without argument is like "make help".
 help:

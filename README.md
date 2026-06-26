@@ -1,7 +1,8 @@
 # OpenCyberCity Testbed Documentation
-# Access the website [here](www.vcuopencity.github.io/occ_docs)
 
-This repository contains the documentation for the OpenCyberCity Testbed project, including system architecture, design specifications, and user guides.
+[![Build and deploy docs](https://github.com/vcuopencity/occ_docs/actions/workflows/docs.yml/badge.svg)](https://github.com/vcuopencity/occ_docs/actions/workflows/docs.yml)
+
+This repository contains the documentation source for the OpenCyberCity Testbed project, including system architecture, design specifications, and user guides. You can access the documentation by going to: [www.vcuopencity.github.io/occ_docs](www.vcuopencity.github.io/occ_docs)
 
 ## Features
 
@@ -11,30 +12,25 @@ This repository contains the documentation for the OpenCyberCity Testbed project
 
 - **Search Functionality**: The documentation will include a search feature, allowing users to quickly find the information they need. (This feature is only available when the documentation is served through a [web server](#web-server))
 
-## Planned Features
-
 - **Build Automation**: The documentation will be automatically built upon changes and deployed to a web server, ensuring that the latest version is always available to users.
 
 - **No-cost Hosting**: The documentation will be hosted using GitHub Pages, making it accessible to all users without any cost.
 
-## Preview
-
-Here is what the documentation looks like when built and served locally with different themes.
-> Personally, I prefer the Sphinx RTD theme, but the Furo theme is also a good option.
-
-### Sphinx RTD
+### Website Preview
 <img src="images/sphinx_rtd_theme.png" alt="Sphinx RTD Theme" width="100%" />
 
-### Furo (Dark)
-> **Note:** The Furo theme **automatically switches** between light and dark mode based on your system settings.
+## Contributing to the Documentation
 
-<img src="images/furo_theme_dark.png" alt="Furo Theme" width="100%" />
+Check out the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to contribute to the documentation.
 
-### Furo (Light)
-<img src="images/furo_theme_light.png" alt="Furo Theme" width="100%" />
+## Collaboration
 
-## Building Documentation
-The documentation is still in development and is not yet deployed.
+Since the website is only deployed on pushes to main, if you wish to collaborate on your documentation and only deploy it when it is completely ready, simply create a new branch, and make your commits there. 
+
+Once you are ready to deploy, simply submit a pull request, and once your branch has been merged, your work will show up on the website.
+
+## Building Documentation Locally
+While working on your documentation, you can preview what it looks like and resolve build errors by deploying the website locally.
 
 If you wish to preview the documentation, you can do so by following these steps:
 
@@ -46,7 +42,7 @@ If you wish to preview the documentation, you can do so by following these steps
     ```bash
     cd occ_docs
     ```
-3. (Recommended) Create a virtual environment to manage dependencies.
+3. Create a virtual environment to manage dependencies.
     ```bash
     python -m venv venv
     source venv/bin/activate
@@ -58,14 +54,11 @@ If you wish to preview the documentation, you can do so by following these steps
     ```
 
 5. Build and launch the website!
-- <a id="web-server"></a>
     - Launch an HTTP server to serve the documentation locally. You can use Python's built-in HTTP server for this purpose:
     ```bash
     cd docs/
     make serve
     ```
     - This will start a local web server at `http://localhost:8000`. You can open this URL in your web browser to view the documentation.
-    ```
-## Contributing to the Documentation
 
-Check out the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to contribute to the documentation.
+    *If you have any questions, comments, or concerns, please feel free to ask: diwany@vcu.edu*

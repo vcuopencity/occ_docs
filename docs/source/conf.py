@@ -33,6 +33,9 @@ source_suffix = {
 html_theme = 'sphinx_rtd_theme' # deciding between 'sphinx_rtd_theme' and 'furo'
 html_static_path = ['_static']
 
+# for custom domain
+# html_extra_path = ['_extra']
+
 html_logo = '_static/home/CCI_logo.avif' # path to logo from config dir. (if furo, will show this and light/dark)
 
 html_static_path = ["_static"]
