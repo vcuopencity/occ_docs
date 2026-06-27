@@ -9,12 +9,9 @@ This repository contains the documentation source for the OpenCyberCity Testbed 
 - **Built with Sphinx**: The documentation is built using the Sphinx documentation generator, which allows for easy creation of professional-looking documentation.
 - **Markdown Support**: The documentation is written in Markdown, making it easy to read and write. No need to learn reStructuredText (reST), or write HTML. Any exisiting documentation can be easily ported to this repository.
 - **Automatic Table of Contents**: The documentation includes an automatically generated table of contents, making it easy to navigate through the different sections.
-
-- **Search Functionality**: The documentation will include a search feature, allowing users to quickly find the information they need. (This feature is only available when the documentation is served through a [web server](#web-server))
-
-- **Build Automation**: The documentation will be automatically built upon changes and deployed to a web server, ensuring that the latest version is always available to users.
-
-- **No-cost Hosting**: The documentation will be hosted using GitHub Pages, making it accessible to all users without any cost.
+- **Search Functionality**: The documentation includes search functionality, allowing users to quickly find the information they need.
+- **Build Automation**: The documentation automatically builds upon changes and deployed online.
+- **No-cost Hosting**: The documentation is hosted using GitHub Pages, making it accessible to all users without any cost.
 
 ### Website Preview
 <img src="images/sphinx_rtd_theme.png" alt="Sphinx RTD Theme" width="100%" />
