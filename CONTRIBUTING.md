@@ -96,31 +96,51 @@ Reorder those lines to reorder the top-level sidebar (written out explicitly so 
 
 ### Linking between pages and sections
 
-Don't hardcode `.html` paths. Use Sphinx's cross-reference roles, they auto-fill the link text from the target's title and warn you at build time if the target ever disappears.
-
-**Link to a whole page** with the `{doc}` role, using the docname (a leading `/` means "from `source/`"):
+**Don't hardcode `.html` paths, and don't use the `{doc}`/`{ref}` roles.** We link to everything, pages and sections, the same way: with normal Markdown link syntax pointing at a **label**.
 
 ```markdown
-Follow the guide {doc}`here</device_setup/nmap>`.
+[link text](label-name)
 ```
 
-That `text <target>` form sets custom link text; drop it (`` {doc}`/device_setup/nmap` ``) to auto-use the page's title.
+A label is a tag you place on the line directly above a heading, written `(label-name)=`. For example, `nmap.md` starts with:
 
-**Link to a specific section** with the `{ref}` role. There's a catch: **you have to create the label manually.** Put a target on the line right above the heading you want to point at:
+```markdown
+(nmap-instructions)=
+# How to use `nmap`
+```
+
+...so any page can link to it with `[here](nmap-instructions)`. Labels are keyed to the **label name, not the file path or heading text**, so these links survive you moving files around or reordering sections.
+
+#### The procedure (follow this every time)
+
+For each page or section (any Markdown `#` heading) you want to link to:
+
+1. **Go to it** and look for a label (`(something)=`) right above the heading.
+2. **If a label already exists, reuse it.** Just write `[your text](that-label)`. Do **not** make a second one.
+3. **If there's no label, create one** above the heading, following the naming rules below, then link to it.
+
+#### Naming rules (please do this)
+
+Labels are **global across the entire site** and must be unique, so name them predictably:
+
+- **Page / title label** (above a page's top-level `#` title): a short **1–2 word** label, words joined by `-`.
+  - e.g. `nmap-instructions`
+  - e.g. `pi-setup`
+- **Section label** (above any non-`#` heading inside a page): **`<doc-or-title>-<section-name>`**.
+  - e.g. `pi-setup-static-ip` (the "Set a static IP" section of the Pi setup guide)
+
+So creating and using a section label looks like this:
 
 ````markdown
-(static-ip-setup)=
+(pi-setup-static-ip)=
 ## Set a static IP address
 ````
 
-Then reference it from anywhere, in any file:
-
 ```markdown
-See {ref}`static-ip-setup` for the static IP steps.
-{ref}`custom text <static-ip-setup>`
+Make sure you've done the [static IP setup](pi-setup-static-ip) first.
 ```
 
-Why bother with labels? Because `{ref}` is keyed to the **label**, not the file path or heading text, so the link survives you moving the file *or* reordering sections. Since the docs are still being shuffled around, prefer labeled `{ref}`s for anything you point at often.
+> **Not sure if a label name is okay, or whether something fits the convention? Ask before merging.** Better to do it before adding references to it.
 
 ---
 
@@ -159,23 +179,23 @@ Same pattern, one level down. Inside `factory/`, create `arm.md` next to an `arm
 
 ### Reference another page or section
 
-To point readers at another doc (like the Pi setup guide does for the nmap guide):
+Always link via a **label** with plain Markdown syntax (see [Linking between pages and sections](#linking-between-pages-and-sections) for the full convention). To point readers at another page or section:
 
-1. **Whole page:** use `{doc}` with the target's docname.
+1. **Open the target** and check for an existing label (`(something)=`) above the heading.
+2. **If there's already a label, just use it.** The Pi guide links to the nmap page this way:
    ```markdown
-   If you are not familiar with `nmap`, follow the guide {doc}`here</device_setup/nmap>`.
+   If you are not familiar with `nmap`, follow the guide [here](nmap-instructions).
    ```
-2. **A specific section:** first add a label above the target in the *other* file. The Pi guide's static IP step is labeled exactly like this:
+3. **If there's no label, add one** above the heading (following the naming rules), then link to it. The Pi guide's static IP step is labeled like this:
    ````markdown
-   (static-ip-setup)=
+   (pi-setup-static-ip)=
    5. **Set a static IP address for the Raspberry Pi.**
    ````
-   ...then link to it with `{ref}` from anywhere:
+   ...and gets linked from anywhere with:
    ```markdown
-   Make sure you've done the {ref}`static IP setup <static-ip-setup>` first.
+   Make sure you've done the [static IP setup](pi-setup-static-ip) first.
    ```
-   ⚠️ Use the `text <label>` form here. The bare `` {ref}`static-ip-setup` `` only works when the label sits above a **heading** (it borrows the heading's text); above a list item like this one, there's no text to borrow and the build fails.
-3. Rebuild and watch the build output, a broken `{doc}`/`{ref}` shows up as a warning (and since we build with `-W`, it'll fail the build outright).
+4. Rebuild and watch the build output, a broken link shows up as a warning (and since we build with `-W`, it'll fail the build outright).
 
 ---
 

@@ -1,3 +1,4 @@
+(pi-setup)=
 # How to setup a Raspberry Pi for a building
 
 1. **Setup the Raspberry Pi with the following steps:**
@@ -25,7 +26,7 @@
 ---
 4. **Login with the username `pi` and the password `raspberry`.**
 ---
-(static-ip-setup)=
+(pi-setup-static-ip)=
 5. **Set a static IP address for the Raspberry Pi.**
   > **Note:** Almost all devices in the OpenCyberCity Testbed project are configured to use static IP addresses. Some address ranges are reserved for specific types of devices, or devices within specific systems. <br> All this information is documented in the IP Address Registry spreadsheet in the Google Drive. Make sure to refer to this document to find the appropriate static IP address for the Raspberry Pi you are setting up.<br> For example, all floor-level Raspberry Pis in the hospital building are assigned static IP addresses in the range `10.213.1.91 -> 10.213.1.94` (90 is the master, and 91-94 are the floor-level Pis for floors 1-4, respectively).
   - Run `ip route` to check the current IP address of the gateway and the network interface name (e.g. `eth0` or `wlan0`).
