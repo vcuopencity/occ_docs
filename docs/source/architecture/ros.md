@@ -1,9 +1,8 @@
-# ROS 2
-
-ROS2 Info
+# ROS2
 
 ```{toctree}
 :maxdepth: 1
 :glob:
 
 ros/*
+```
